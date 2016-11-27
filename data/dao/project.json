@@ -4,7 +4,10 @@
     "debugType": "portable",
     "emitEntryPoint": false
   },
-  "dependencies": {},
+  "dependencies": {
+    "FSEntity":"1.0.0-*"
+  },
+  
   "frameworks": {
     "netcoreapp1.0": {
       "dependencies": {
