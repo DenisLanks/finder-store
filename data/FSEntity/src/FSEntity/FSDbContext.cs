@@ -8,9 +8,17 @@ namespace FSEntity.Context
         }
         public FSDbContext(DbContextOptions options):base(options)
         {
+            
         }
         public DbSet<PessoaFisica> PessoasFisicas { get; set; }
         public DbSet<PessoaJuridica> PessoasJuridicas { get; set; }
         public DbSet<Sexo> Sexos { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
+         
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder){
+
+        }
     }
 }
