@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FSEntity.Context;
+using Microsoft.EntityFrameworkCore;
 namespace DAO
 {
   public abstract class DAO<Entidade,ID> :IDAO<Entidade,ID>
@@ -14,8 +14,8 @@ namespace DAO
             context = new FSDbContext();
         }
 
-        public DAO(string connection){
-            context = new FSDbContext(connection);
+        public DAO(DbContextOptions options){
+            context = new FSDbContext(options);
         }
 
         public DAO(FSDbContext context){

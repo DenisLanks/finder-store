@@ -1,6 +1,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-namespace FSEntity.Context
+using FSEntity;
+namespace DAO
 {
     public class FSDbContext: DbContext
     {
