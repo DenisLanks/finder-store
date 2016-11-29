@@ -3,7 +3,7 @@ namespace DAO
     /// <summary>
     /// Esta interface define os métodos obrigatórios para toda classe de (Data Access Object)
     /// </summary>
-    public interface IDAO<Entity,ID>{
+    public interface IDAO<Entity,ID> where Entity : class{
 
         /// <summary>
         /// Este metodo insere uma nova entidade na base de dados e automaticamente salva 
@@ -106,5 +106,12 @@ namespace DAO
         /// Este método salva as alterações na base de dados
         /// </summary>
         void Save();
+        /// <summary>
+        /// Este método obtém uma entidade pela chave primaria
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        Entity GetByID(ID id);
+
     }
 }
