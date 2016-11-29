@@ -196,5 +196,28 @@ namespace DAO
         public Entidade GetByID(ID id){
             return dbSet.Find(id);
         }
-  }  
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public bool Exists(ID id) {
+            Entidade entity = GetByID(id);
+            return entity != null;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+        public bool Exists(Entidade entity)
+        {
+            if (entity == null)
+            {
+                return false;
+            }            
+            return dbSet.Contains(entity);
+        }
+    }  
 }
